@@ -33,7 +33,7 @@ class NoteDetailView(generics.RetrieveUpdateDestroyAPIView):
         #обрабатывает обновление заметки с валидацией
         pertial = kwargs.pop('paerial',False)
         instance = self.get_object()
-        serializer = self.get_serializer(instance, data=request.dataa, partial=partial)
+        serializer = self.get_serializer(instance, data=request.data, partial=True)
 
         if serializer.is_valid():
             self.perform_update(serializer)
