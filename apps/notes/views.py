@@ -12,7 +12,7 @@ class NoteListCreateView(generics.ListCreateAPIView):
     #представления для списка и создание заметок
     queryset = Note.objects.all()
 
-    def get_serializer(self):
+    def get_serializer_class(self):
         # возвращает подходящий сериалзатор в зависимости от запроса
         if self.request.method == 'POST':
             return NoteCreateSerializer
